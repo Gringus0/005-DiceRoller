@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="bg-dark text-light">
+    <div class="text-center m-5">
+        <input type="text" name="roll-txt" id="roll-txt" class="form-control m-1" placeholder="Example: 5d6"/>
+        <button class="btn btn-primary my-1" id="roll-btn">Roll</button>
+    </div>
+    <div class="m-5">
+        <div class="d-flex m-1">
+            <h2>Average roll: </h2>
+            <h2 id="average"></h2>
+        </div>
+        <div class="d-flex m-1">
+            <h2>Maximum possible roll: </h2>
+            <h2 id="maximum"></h2>
+        </div>
+        <div class="d-flex m-1">
+            <h2>You rolled: &nbsp;</h2>
+            <h2 id="result"></h2>
+            <h2 id="total"></h2>
+        </div>
+        
+        <h2 id="warning" class="m-1 text-danger"></h2>
+        <div class="d-flex justify-content-between m-1">
+            <h2>Roll History:</h2>
+            <button class="btn btn-danger" id="clear-history">Clear History</button>
+        </div>
+        <div id="roll-history" class="m-1">
+            
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
