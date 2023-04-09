@@ -19,6 +19,9 @@ btnRoll.addEventListener("click", function(){
     let dIndex = inputText.indexOf("d");
     // console.log(dIndex);
     let numberOfRolls = Number(inputText.substring(0, dIndex));
+    if(dIndex == 0){
+        numberOfRolls = 1;
+    }
     // console.log(numberOfRolls);
     let sidesOfDice = Number(inputText.substring(dIndex+1));
     // console.log(sidesOfDice);
@@ -40,7 +43,6 @@ btnRoll.addEventListener("click", function(){
                 result.innerHTML += "[" + singleroll + "]"; 
                 total += singleroll;
                 warning.innerHTML = ""; 
-                
                 break;
             default: 
                 result.innerHTML = "";
@@ -82,3 +84,10 @@ btnRoll.addEventListener("click", function(e){
     leftDie.classList.add("dice-rotate-clockwise");
     rightDie.classList.add("dice-rotate-counterclockwise");
 }, false);
+
+input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      btnRoll.click();
+    }
+});
