@@ -1,0 +1,69 @@
+.dice {
+    width: 100px;
+    margin: 0px 20px;
+}
+
+
+@keyframes rotate-clockwise {        
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }      
+}
+@keyframes rotate-counterclockwise {        
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }      
+}
+.dice-rotate-clockwise {
+    position: relative;
+    animation: rotate-clockwise 1s ease;
+}
+.dice-rotate-counterclockwise {
+    position: relative;
+    animation: rotate-counterclockwise 1s ease;
+}
+
+
+/* .rotate-clockwise {
+    animation-name: spin-clockwise;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+.rotate-counterclockwise{
+    animation-name: spin-counterclockwise;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes spin-clockwise {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+@keyframes spin-counterclockwise {
+    from {transform: rotate(360deg);}
+    to {transform: rotate(0deg);}
+} */
+/* .rotated {
+    -webkit-animation:spin 1s linear;
+    -moz-animation:spin 1s linear;
+    animation:spin 1s linear;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+} */

@@ -10,6 +10,8 @@ let average = document.querySelector("#average");
 let maximum = document.querySelector("#maximum");
 let rollHistory = document.querySelector("#roll-history");
 let btnClearHistory = document.querySelector("#clear-history");
+let leftDie = document.querySelector("#left-die");
+let rightDie = document.querySelector("#right-die");
 
 btnRoll.addEventListener("click", function(){
     let total = 0;
@@ -21,6 +23,9 @@ btnRoll.addEventListener("click", function(){
     let sidesOfDice = Number(inputText.substring(dIndex+1));
     // console.log(sidesOfDice);
     result.innerHTML = "";
+    let currentTime = new Date();
+    let timeNow = currentTime.toLocaleString('en-GB', { timeZone: 'UTC' });
+    // console.log(currentTime.toLocaleString('en-GB', { timeZone: 'UTC' }));
     for(let i = 0; i < numberOfRolls; i++){  
         let singleroll;   
         switch(sidesOfDice){
@@ -45,9 +50,9 @@ btnRoll.addEventListener("click", function(){
     }
     if(inputText && !warning.innerHTML){
         document.querySelector("#total").innerHTML = "&nbsp" + "= " + total;
-        average.innerHTML = "&nbsp" + numberOfRolls*sidesOfDice*0.6;
+        average.innerHTML = "&nbsp" + Math.round(numberOfRolls*sidesOfDice*0.6);
         maximum.innerHTML = "&nbsp" + numberOfRolls*sidesOfDice;
-        rollHistory.innerHTML += "<h3>" + "[" + numberOfRolls + "d" + sidesOfDice + "] = " + total + "&nbsp</h3>";
+        rollHistory.innerHTML += "<div class='d-flex justify-content-between mb-1'><h3>" + "[" + numberOfRolls + "d" + sidesOfDice + "] = " + total + "&nbsp</h3>" + "<h3>" + timeNow +"</h3></div>" ;
     }
     else {
         document.querySelector("#total").innerHTML = "";
@@ -67,4 +72,13 @@ window.onload = () => {
     if(localStorage.getItem("roll-history")){
         rollHistory.innerHTML = localStorage.getItem("roll-history");
     }
-}
+};
+
+btnRoll.addEventListener("click", function(e){
+    e.preventDefault;
+    leftDie.classList.remove("dice-rotate-clockwise");
+    rightDie.classList.remove("dice-rotate-counterclockwise");
+    void leftDie.offsetWidth;
+    leftDie.classList.add("dice-rotate-clockwise");
+    rightDie.classList.add("dice-rotate-counterclockwise");
+}, false);
