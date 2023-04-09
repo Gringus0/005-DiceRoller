@@ -54,7 +54,7 @@ btnRoll.addEventListener("click", function(){
         document.querySelector("#total").innerHTML = "&nbsp" + "= " + total;
         average.innerHTML = "&nbsp" + Math.round(numberOfRolls*sidesOfDice*0.6);
         maximum.innerHTML = "&nbsp" + numberOfRolls*sidesOfDice;
-        rollHistory.innerHTML += "<div class='d-flex justify-content-between mb-1'><h3>" + "[" + numberOfRolls + "d" + sidesOfDice + "] = " + total + "&nbsp</h3>" + "<h3>" + timeNow +"</h3></div>" ;
+        rollHistory.innerHTML += "<div class='d-flex justify-content-between mb-1'><h3 class='roll-history-small'>" + "[" + numberOfRolls + "d" + sidesOfDice + "] = " + total + "&nbsp</h3>" + "<h3 class='roll-history-small'>" + timeNow +"</h3></div>" ;
     }
     else {
         document.querySelector("#total").innerHTML = "";
